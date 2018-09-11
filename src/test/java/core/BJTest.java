@@ -3,10 +3,36 @@ package core;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+import org.junit.Test;
+
 import junit.framework.TestCase;
 
+//REMEBER to change all the file place holder to test file path
 public class BJTest extends TestCase{
-
+    @Test(expected = RuntimeException.class)
+    public void testFileInputEmpty() {
+        BlackJackGame game = new BlackJackGame();
+        game.FileInputPlay(emptyFile);
+    }
+    
+    @Test(expected = RuntimeException.class)
+    public void testFileOnly1Card() {
+        BlackJackGame game = new BlackJackGame();
+        game.FileInputPlay(oneCardFile);
+    }
+    @Test(expected = RuntimeException.class)
+    public void testFile2Cards() {
+        BlackJackGame game = new BlackJackGame();
+        game.FileInputPlay(twoCardFile);
+    }
+    
+    @Test(expected = RuntimeException.class)
+    public void testFile3Cards() {
+        BlackJackGame game = new BlackJackGame();
+        game.FileInputPlay(threeCardFile);
+    }
+    
+    //Four cards input is tested here
     public void testBlackJack() throws Exception {
         BlackJackGame game = new BlackJackGame();
         final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
