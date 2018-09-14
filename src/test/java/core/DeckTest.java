@@ -14,5 +14,9 @@ public class DeckTest extends TestCase{
     public void testCardShuffled() throws Exception {
         Deck deck = new Deck();
         assertEquals(false, deck.getCard().getCardString().equals("CA"));
+        assertEquals(false, deck.getCard().getCardString().equals("C2"));
+        assertEquals(false, deck.getCard(deck.getNumberOfCardOnDeck()-1).getCardString().equals("DK"));
+        //After 2 cards drawn from deck, check if the drawn cards are no longer in the deck
+        assertEquals(50, deck.getNumberOfCardOnDeck());
     }
 }

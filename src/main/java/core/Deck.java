@@ -42,6 +42,14 @@ public class Deck {
        return card;
     }
     
+    public Card getCard(int index) throws Exception{
+        if(index > 52) {
+            throw new Exception ("The index does not exist");
+        }
+        return deck.get(index);
+         
+    }
+    
     public int getNumberOfCardOnDeck() {
         return deck.size();
     }
