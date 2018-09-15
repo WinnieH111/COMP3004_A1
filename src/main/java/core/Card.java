@@ -43,7 +43,6 @@ public class Card {
         return value;
     }
     
-    
     public static boolean isIntRank(String rank) {
         Pattern pattern = Pattern.compile("[0-9]|10");
         return pattern.matcher(rank).matches();
