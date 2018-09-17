@@ -63,5 +63,10 @@ public class GameResultTests{
         assertEquals(1, game.FileInputPlay(filePath+"playerSplitloss.txt"));
         //Dealer Split and burst, player win
         assertEquals(2, game.FileInputPlay(filePath+"dealerSplitLoss.txt"));
+        //Player hit twice on one hand, hit once on another, dealer has initial score 20. 
+        //choose the best hand of player to bit dealer's hand, dealer wins
+        assertEquals(1, game.FileInputPlay(filePath+"playerSplitHitDealerWin.txt"));
+        //Both Dealer and Player hit, the best of hands chose and player wins
+        assertEquals(2, game.FileInputPlay(filePath+"playerSplitHitPlayerWin.txt"));
     }
 }
