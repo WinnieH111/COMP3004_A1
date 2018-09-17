@@ -75,4 +75,13 @@ public class FileInputTests extends TestCase{
         } catch (Exception expected) {
         }
     }
+    
+    public void testSplitDifferentCards() throws Exception{
+        try {
+            BlackJackGame game = new BlackJackGame();
+            game.FileInputPlay(filePath+"splitDifferentCard.txt");
+        } catch(Exception expected) {
+            
+        }
+    }
 }
