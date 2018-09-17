@@ -52,16 +52,16 @@ public class GameResultTests{
         assertEquals(0, game.FileInputPlay(filePath+"pushTest.txt"));
     }
     
-    
+    @Test
     public void testSplit() throws Exception {
         BlackJackGame game = new BlackJackGame();
-        //player enter "D" as action, but has two different card, does not allow to split (Print error)
-        game.FileInputPlay(filePath + "/playNotLegitSplit");
-        assertEquals(, outContent.toString().contains("Player can not split"));
-        //Player enter "D" as action, has two same card on hand, can do the split
+        //Player enter "D" as action, has two same card on hand, can do the split, and one of the hands burst
+        assertEquals(2, game.FileInputPlay(filePath+"playerSplitWin.txt"));
         //Dealer has two same card on hand, can do split automatically
+        assertEquals(2, game.FileInputPlay(filePath+"dealerSplit.txt"));
+        //Player split and burst, dealer win 
+        assertEquals(1, game.FileInputPlay(filePath+"playerSplitloss.txt"));
+        //Dealer Split and burst, player win
+        assertEquals(2, game.FileInputPlay(filePath+"dealerSplitLoss.txt"));
     }
-
-
- 
 }
