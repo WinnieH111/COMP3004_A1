@@ -84,4 +84,13 @@ public class FileInputTests extends TestCase{
             
         }
     }
+    
+    public void testNoBlackJackNofutureCards() throws Exception{
+        try {
+            BlackJackGame game = new BlackJackGame();
+            game.FileInputPlay(filePath+"noBJButNoMoreCards.txt");
+        } catch(Exception expected) {
+            
+        }
+    }
 }

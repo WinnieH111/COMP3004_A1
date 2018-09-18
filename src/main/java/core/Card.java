@@ -53,4 +53,17 @@ public class Card {
         return pattern.matcher(getCardString()).matches();
     }
     
+    
+    public String validAction() throws Exception {
+        boolean actionPattern = false;
+        Pattern pattern = Pattern.compile("[DSH]");
+        actionPattern = pattern.matcher(getCardString()).matches();
+        if(actionPattern) {
+            return suit;
+        }
+        else {
+            throw new Exception("Not a legal action instruction. Game terminated...");
+        }
+    }
+    
 }

@@ -23,14 +23,14 @@ public class GameResultTests{
     }
     
     @Test
-    public void testBurst() throws Exception {
+    public void testBust() throws Exception {
         BlackJackGame game = new BlackJackGame();
         //Player hit once and burst, dealer win
-        assertEquals(1, game.FileInputPlay(filePath+"playerBurstTest.txt"));
+        assertEquals(1, game.FileInputPlay(filePath+"playerBustTest.txt"));
         //Player hit twice and burst, dealer win
-        assertEquals(1, game.FileInputPlay(filePath+"playerBurstTwiceTest.txt"));
+        assertEquals(1, game.FileInputPlay(filePath+"playerBustTwiceTest.txt"));
         //Player stand, dealer hit and burst, player win 
-        assertEquals(2, game.FileInputPlay(filePath+"dealerBurstTest.txt"));
+        assertEquals(2, game.FileInputPlay(filePath+"dealerBustTest.txt"));
     }
    
     @Test

@@ -42,7 +42,7 @@ public class CardTest extends TestCase{
         assertEquals(1000, card4.getValue());
     }
     
-    public void testCardValudOther() {
+    public void testCardValueOther() {
         Card card1 = new Card("C", "2");
         Card card2 = new Card("D", "5");
         Card card3 = new Card("H", "7");

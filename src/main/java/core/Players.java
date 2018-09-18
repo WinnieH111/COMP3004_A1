@@ -12,6 +12,8 @@ public class Players {
     Players(){
         cardOnHand = new ArrayList<Card>();
         action = new ArrayList<String>();
+        splittedCardOnHand = new ArrayList<Card>();
+
         } 
     
     public void addCard(Card card) {
@@ -21,6 +23,27 @@ public class Players {
         else {
             throw new IllegalArgumentException("The new card can not be added,"
                     + " because it is an invalid card");
+        }
+    }
+
+    public void splitHandAddCard(Card card) {
+        if(card.isValidCard()) {
+            splittedCardOnHand.add(card);
+        }
+        else {
+            throw new IllegalArgumentException("The new card can not be added,"
+                    + " because it is an invalid card");
+        }
+    }
+    
+    public void printSplittedCards() {
+        if(!splittedCardOnHand.isEmpty()) {
+            System.out.println();
+            System.out.print("Player's Splitted cards are: ");
+            for (int i=0; i<splittedCardOnHand.size();i++) {
+                System.out.print(splittedCardOnHand.get(i).getCardString()+ " ");
+            }
+            System.out.println("\n");
         }
     }
     
@@ -39,6 +62,17 @@ public class Players {
     public int getScore(boolean bj) {
         int score = 0;
         for(Card card:cardOnHand) {
+            score+=card.getValue();
+            }
+        if(score > 1000 && !bj) {
+            score = aceHandler(score);
+        }
+        return score;
+    }
+    
+    public int getSplitScore(boolean bj) {
+        int score = 0;
+        for(Card card:splittedCardOnHand) {
             score+=card.getValue();
             }
         if(score > 1000 && !bj) {
@@ -89,5 +123,19 @@ public class Players {
         }
         return adjustedScore;
     }
+
+    public boolean splitLegit() {
+        boolean split = false;
+        if((getCardNumber() == 2) && (getCard(0).getRank().equals(getCard(1).getRank()))) {
+            split = true;
+        }
+        return split;
+    }
+    
+    public void playersSplit(){
+        if(splitLegit()) {
+            splittedCardOnHand.add(cardOnHand.remove(1));
+        }
+     }
 
 }
