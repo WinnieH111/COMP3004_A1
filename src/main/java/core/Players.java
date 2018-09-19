@@ -6,12 +6,10 @@ import java.util.List;
 public class Players {
     
     protected List<Card> cardOnHand;
-    protected List<String> action;
     protected List<Card> splittedCardOnHand;
     
     Players(){
         cardOnHand = new ArrayList<Card>();
-        action = new ArrayList<String>();
         splittedCardOnHand = new ArrayList<Card>();
 
         } 
@@ -55,9 +53,6 @@ public class Players {
         return cardOnHand.size();
     }
     
-    public void addAction(String newAction) {
-        action.add(newAction);
-    }
     
     public int getScore(boolean bj) {
         int score = 0;
