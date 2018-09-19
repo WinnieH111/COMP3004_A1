@@ -14,11 +14,12 @@ COMP3004 Assignment 1, Individual assignment
 
 Credential information:
 - The JavaFX UI implementation uses D. Parsons, Z. Samuelson, A. Wollschlager, D. Thompson's BlackJack game([https://github.com/dylanparsons/BlackJack]) cards and background files
-- The JavaFX UI implementation follows D. Parsons, Z. Samuelson, A. Wollschlager, D. Thompson's BlackJack game([https://github.com/dylanparsons/BlackJack])'s design example, includes:
+- The JavaFX UI implementation follows D. Parsons, Z. Samuelson, A. Wollschlager, D. Thompson's BlackJack game([https://github.com/dylanparsons/BlackJack]) design example, includes:
   - Using of JavaFX GridPane
   - Set texts' Font and Colors
   - Methods such as draw and add cards into the FlowPane, and remove the cards
 - The main work flow has been changed to compile with my own BlackJackGame design and function.
+- Simple logs have been added when run with JavaFX UI
 - JavaFX UI does not support File input at this moment.
 - Thanks to this example, I have the chance to start checking other references and to learn the basic JavaFX knowledge
 
@@ -27,8 +28,9 @@ Learning Process:
 - Learnt JavaFX from beginning 
 - Future explore Maven 
 - Future explore log4j
-- 
 
 Limitation:
-- Because of the time restriction, some of the function and be refactored and optimized
+- Because of the time restriction, some of the function should be refactored and optimized
 - JavaFX UI does not support Split for now. Still working on it. 
+- The game should be able to support Maven build and run from .jar file. Meta data need to be added. 
+- It is the first time applying TDD in software development. A formal test plan may be helpful in next TDD project. 
