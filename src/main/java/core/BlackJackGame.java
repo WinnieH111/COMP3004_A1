@@ -104,6 +104,7 @@ public class BlackJackGame {
         }
         if(inputAction.equalsIgnoreCase("S")) {
             scan.close(); 
+            player.printCards();
             if(dealer.dealerHit()) {
                 if(!dealer.splitLegit()) {
                     while(dealer.dealerHit()) {
