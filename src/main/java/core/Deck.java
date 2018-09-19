@@ -21,7 +21,7 @@ public class Deck {
         shuffleCard();
     }
 
-    private void shuffleCard() {
+    public void shuffleCard() {
         Random rand = new Random();
         int deckSize = deck.size();
         int shuffleTime = 10000;

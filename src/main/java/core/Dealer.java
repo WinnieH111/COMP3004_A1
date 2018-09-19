@@ -25,21 +25,24 @@ public class Dealer extends Players {
         boolean hit = false;
         int score = getScore(true); 
         if(score < 17) {
-            hit = true;
+            return true;
         }
         else if (score > 1000 && score < 2000) {
             score-=1000;
-            if(score+11<=17) {
-                hit = true;
+            if(score+11 <= 17) {
+                return true;
+            }
+            if(getCardNumber()>2 && (score+1) < 17) {
+                return true;
             }
         }
         else if(score > 2000 && score < 3000) {
             score-=2000;
-            if(score+12 <=17) {
-                hit = true;
+            if(getCardNumber() == 2 && score+12 <=17) {
+                return true;
             }
-            else if(score+2<=17) {
-                hit = true;
+            if(getCardNumber() > 2 && score+2 < 17) {
+                return true;
             }
         }
         return hit;

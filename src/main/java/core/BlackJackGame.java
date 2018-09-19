@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class BlackJackGame {
 
 
-    public void ConsoleInputPlay() throws Exception {
+    public void consoleInputPlay() throws Exception {
         //Initial the deck
         Deck deck = new Deck();
         //Initially provide 2 cards to player and dealer
@@ -77,6 +77,7 @@ public class BlackJackGame {
                     
                 }
                 splitWinner(player, dealer);
+                scan.close(); 
             }
         }
             
@@ -102,6 +103,7 @@ public class BlackJackGame {
             }
         }
         if(inputAction.equalsIgnoreCase("S")) {
+            scan.close(); 
             if(dealer.dealerHit()) {
                 if(!dealer.splitLegit()) {
                     while(dealer.dealerHit()) {
@@ -133,14 +135,15 @@ public class BlackJackGame {
     }
     
 
-    public void FileInputPlay() throws Exception {
+    public void fileInputPlay() throws Exception {
         System.out.println("Please enter the file input for this game: ");
         Scanner scan = new Scanner(System.in);
         String inputFile = scan.nextLine();
-        FileInputPlay(inputFile);
+        fileInputPlay(inputFile);
+        scan.close(); 
     }
 
-    public int FileInputPlay(String filePath) 
+    public int fileInputPlay(String filePath) 
             throws Exception {
         BufferedReader br = new BufferedReader(new FileReader(filePath));
         StringBuffer sbf = new StringBuffer("");
@@ -367,13 +370,13 @@ public class BlackJackGame {
         int playerScore = player.getScore(false);
         int dealerScore = dealer.getScore(false);
         if(!splittedPlay) {
-            if (playerScore>21 && dealerScore < 21) {
+            if (playerScore>21 && dealerScore <= 21) {
                 System.out.print("Player bust, dealer wins.\nDealer's score is " + dealerScore + "\nPlayer's score is " + playerScore + "\n");
                 player.printCards();
                 dealer.printAllCards();
                 endOfGame = 1;
             }
-            else if (playerScore < 21 && dealerScore > 21) {
+            else if (playerScore <= 21 && dealerScore > 21) {
                 System.out.println("Dealer bust, Player wins.\nPlayer's score is " + playerScore + "\nDealer's score is " + dealerScore + "\n");
                 player.printCards();
                 dealer.printAllCards();
@@ -551,13 +554,18 @@ public class BlackJackGame {
         String inputMethod = scan.nextLine();
 
         if(inputMethod.equalsIgnoreCase("C")) {
-            new BlackJackGame().ConsoleInputPlay();
+            new BlackJackGame().consoleInputPlay();
+            scan.close(); 
         }
         else if(inputMethod.equalsIgnoreCase("F")) {
-            new BlackJackGame().FileInputPlay();
+            new BlackJackGame().fileInputPlay();
+            scan.close(); 
         }
         else {
+            scan.close(); 
             throw new IllegalArgumentException("The input method is not valid");
         }
+       
     }
+   
 }

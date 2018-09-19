@@ -137,5 +137,12 @@ public class Players {
             splittedCardOnHand.add(cardOnHand.remove(1));
         }
      }
+    
+    public void empty() {
+        cardOnHand.clear();
+        if(!splittedCardOnHand.isEmpty()) {
+            splittedCardOnHand.clear();
+        }
+    }
 
 }

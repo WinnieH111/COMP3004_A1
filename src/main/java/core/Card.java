@@ -1,6 +1,7 @@
 package core;
 
 import java.util.regex.Pattern;
+import javafx.scene.image.Image;
 
 public class Card {
     
@@ -66,4 +67,19 @@ public class Card {
         }
     }
     
+    //FOR GUI
+    public Image getCardFace() {
+        return new Image(cardFilePath());
+    } 
+    
+    public String cardFilePath () {
+        if(getRank().equals("10")) {
+            return "file:src/main/resources/cards/" + "t" + getSuit().toLowerCase() + ".gif";
+        }
+        return "file:src/main/resources/cards/" + getRank().toLowerCase() + getSuit().toLowerCase() + ".gif";
+    }
+    
+    public Image getCardBack() {
+        return new Image("file:src/main/resources/cards/b.gif");
+    }
 }
