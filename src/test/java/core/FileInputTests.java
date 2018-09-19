@@ -12,7 +12,7 @@ public class FileInputTests extends TestCase{
     public void testFileInputEmpty() throws Exception {
         try {
             BlackJackGame game = new BlackJackGame();
-            game.FileInputPlay(filePath+"/emptyFile.txt");
+            game.fileInputPlay(filePath+"/emptyFile.txt");
         } catch (Exception expected) {
             
         }
@@ -22,7 +22,7 @@ public class FileInputTests extends TestCase{
     public void testFileOnly1Card() throws Exception {
         try {
             BlackJackGame game = new BlackJackGame();
-            game.FileInputPlay(filePath+"/oneCardFile.txt");
+            game.fileInputPlay(filePath+"/oneCardFile.txt");
         } catch (Exception expected) {
             }
         }
@@ -30,7 +30,7 @@ public class FileInputTests extends TestCase{
     public void testFile2Cards() throws Exception {
         try{
             BlackJackGame game = new BlackJackGame();
-            game.FileInputPlay(filePath+"/twoCardFile.txt");
+            game.fileInputPlay(filePath+"/twoCardFile.txt");
         } catch (Exception expected) {
             }
         }
@@ -38,7 +38,7 @@ public class FileInputTests extends TestCase{
     public void testFile3Cards() throws Exception {
         try {
             BlackJackGame game = new BlackJackGame();
-            game.FileInputPlay(filePath+"/threeCardFile.txt");
+            game.fileInputPlay(filePath+"/threeCardFile.txt");
         } catch (Exception expected) {
             }
         }
@@ -47,7 +47,7 @@ public class FileInputTests extends TestCase{
     public void testInvalidCardInput() throws Exception {
         try{
             BlackJackGame game = new BlackJackGame();
-            game.FileInputPlay(filePath+"/invalidCardInput.txt");
+            game.fileInputPlay(filePath+"/invalidCardInput.txt");
         } catch (Exception expected) {
             }
         }
@@ -55,7 +55,7 @@ public class FileInputTests extends TestCase{
     public void testDuplicateCardInitial() throws Exception {
         try{
             BlackJackGame game = new BlackJackGame();
-            game.FileInputPlay(filePath+"/duplicateCardInput.txt");
+            game.fileInputPlay(filePath+"/duplicateCardInput.txt");
         } catch(Exception expected) {
             }
         }
@@ -63,7 +63,7 @@ public class FileInputTests extends TestCase{
     public void testDuplicateCardPlayer() throws Exception {
         try{
             BlackJackGame game = new BlackJackGame();
-            game.FileInputPlay(filePath+"/duplicateCardInputPlayerHit.txt");
+            game.fileInputPlay(filePath+"/duplicateCardInputPlayerHit.txt");
         } catch (Exception expected) {
             }
         }
@@ -71,7 +71,7 @@ public class FileInputTests extends TestCase{
     public void testDuplicateCardDealer() throws Exception {
         try{
             BlackJackGame game = new BlackJackGame();
-            game.FileInputPlay(filePath+"/duplicateCardInputDealerHit.txt");
+            game.fileInputPlay(filePath+"/duplicateCardInputDealerHit.txt");
         } catch (Exception expected) {
         }
     }
@@ -79,7 +79,7 @@ public class FileInputTests extends TestCase{
     public void testSplitDifferentCards() throws Exception{
         try {
             BlackJackGame game = new BlackJackGame();
-            game.FileInputPlay(filePath+"splitDifferentCard.txt");
+            game.fileInputPlay(filePath+"splitDifferentCard.txt");
         } catch(Exception expected) {
             
         }
@@ -88,7 +88,7 @@ public class FileInputTests extends TestCase{
     public void testNoBlackJackNofutureCards() throws Exception{
         try {
             BlackJackGame game = new BlackJackGame();
-            game.FileInputPlay(filePath+"noBJButNoMoreCards.txt");
+            game.fileInputPlay(filePath+"noBJButNoMoreCards.txt");
         } catch(Exception expected) {
             
         }

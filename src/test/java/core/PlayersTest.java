@@ -43,6 +43,27 @@ public class PlayersTest extends TestCase{
         dealer.addCard(card10);
         dealer.addCard(card11);
         assertEquals(true, dealer.dealerHit());
+        //Dealer receives a Ace and a 4, 
+        //hit and receives a J, Ace count as 1 and need to hit again
+        dealer.cardOnHand.clear();
+        Card card12 = new Card("C", "A");
+        Card card13 = new Card("S", "4");
+        Card card14 = new Card("D", "J");
+        dealer.addCard(card12);
+        dealer.addCard(card13);
+        dealer.addCard(card14);
+        assertEquals(true, dealer.dealerHit());
+        //Dealer receives a Ace and a 4, 
+        //hit and receives a 2, Ace count as 1 and need to hit again
+        dealer.cardOnHand.clear();
+        Card card15 = new Card("C", "4");
+        Card card16 = new Card("S", "A");
+        Card card17 = new Card("D", "2");
+        dealer.addCard(card15);
+        dealer.addCard(card16);
+        dealer.addCard(card17);
+        assertEquals(true, dealer.dealerHit());
+        
     }
 
     public void testGetScoreAndAceHandler() throws Exception{
