@@ -414,6 +414,7 @@ public class BlackJackGame {
         }
         else if(playerFinalScore == dealerFinalScore){
             System.out.println("Dealer wins on a Push!\nPlayer's and Dealer's score are: " + playerFinalScore + "\n");
+            winner = 1;
             player.printCards();
             dealer.printAllCards();
         }

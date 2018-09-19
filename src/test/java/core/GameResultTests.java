@@ -53,7 +53,7 @@ public class GameResultTests{
         //player hit twice, dealer hit once, player wins
         assertEquals(1, game.fileInputPlay(filePath+"playerHitTwiceWin.txt"));
         //Push
-        assertEquals(0, game.fileInputPlay(filePath+"pushTest.txt"));
+        assertEquals(1, game.fileInputPlay(filePath+"pushTest.txt"));
     }
     
     @Test

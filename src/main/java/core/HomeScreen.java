@@ -295,11 +295,7 @@ public class HomeScreen extends Application {
                                 gameEnd = true;
                                 showCards(dealer, dealerCards);
                             }
-                            else if(winner == 0) {
-                                status.setText("Push!");
-                                gameEnd = true;
-                                showCards(dealer, dealerCards);
-                            }
+                           
                         }
                     }
                 });
