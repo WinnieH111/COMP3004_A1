@@ -23,6 +23,10 @@ Credential information:
 - JavaFX UI does not support File input at this moment.
 - Thanks to this example, I have the chance to start checking other references and to learn the basic JavaFX knowledge
 
+Installation:
+- Java 1.8 or above is required for JavaFX runs appropriately
+- Junit 4.12 is used in this project
+
 Learning Process:
 - Learnt Junit and TDD from beginning, explore related libraries and dependencies 
 - Learnt JavaFX from beginning 
