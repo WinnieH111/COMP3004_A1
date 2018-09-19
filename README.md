@@ -19,4 +19,16 @@ Credential information:
   - Set texts' Font and Colors
   - Methods such as draw and add cards into the FlowPane, and remove the cards
 - The main work flow has been changed to compile with my own BlackJackGame design and function.
+- JavaFX UI does not support File input at this moment.
 - Thanks to this example, I have the chance to start checking other references and to learn the basic JavaFX knowledge
+
+Learning Process:
+- Learnt Junit and TDD from beginning, explore related libraries and dependencies 
+- Learnt JavaFX from beginning 
+- Future explore Maven 
+- Future explore log4j
+- 
+
+Limitation:
+- Because of the time restriction, some of the function and be refactored and optimized
+- JavaFX UI does not support Split for now. Still working on it. 
